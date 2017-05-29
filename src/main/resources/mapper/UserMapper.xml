@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mapper.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.sun.furniture.mapper.IUserMapper">
+    <resultMap type="com.sun.furniture.model.User" id="user">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="password" column="password"/>
+    </resultMap>
+
+    <select id="getUsers" resultMap="user">
+        SELECT * FROM user;
+    </select>
+</mapper>
