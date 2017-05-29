@@ -1,0 +1,13 @@
+# ignore all files below
+*.class
+.gitkeep
+.classpath
+.project
+*.prefs
+*.iml
+
+# ignore all files under below folders
+*/target/
+logs/
+.idea/
+*.jar
