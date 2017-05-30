@@ -38,6 +38,7 @@ public class SwaggerConfig {
                 .title("家具定制管理系统后端 RESTful APIs")
                 .description("furniture-be RESTful APIs")
                 .version("1.0")
+                .license("Copyright 2017, All rights reserved to SunjinPeng in GitHub:https://github.com/SunjinPeng2017/furniture-be.git")
                 .build();
     }
 }

@@ -23,4 +23,11 @@ public interface IUserMapper {
      * @return   返回数据库所有的用户
      */
     List<User> getUsers();
+
+    /**
+     * @param name  用户名
+     * @param password 密码
+     * @return   返回查询到结果的用户
+     */
+    User getUserByNameAndPwd(String name,String password);
 }

@@ -12,4 +12,14 @@
     <select id="getUsers" resultMap="user">
         SELECT * FROM user;
     </select>
+
+    <select id="getUserByNameAndPwd" resultMap="user">
+        SELECT * from user
+        <where>
+            name = #{param1}
+            <if test="#param2!=null">
+                and password = #{param2}
+            </if>
+        </where>
+    </select>
 </mapper>
