@@ -28,6 +28,21 @@ public class User implements Serializable{
     @ApiModelProperty(value = "密码")
     private String password;
 
+    @ApiModelProperty(value = "性别")
+    private String sex;
+
+    @ApiModelProperty(value = "电话号码")
+    private String phoneNumber;
+
+    @ApiModelProperty(value = "地址")
+    private String address;
+
+    @ApiModelProperty(value = "权限")
+    private String permission;
+
+    @ApiModelProperty(value = "注册时间")
+    private String registerTime;
+
     /**
      * Return the Name
      *
@@ -89,11 +104,118 @@ public class User implements Serializable{
         this.id = id;
     }
 
+
+    /**
+     * Return the Sex
+     *
+     * @return property value of sex
+     * @since gempile-model 0.1.0
+     */
+    public String getSex() {
+        return sex;
+    }
+
+    /**
+     * Set the Sex
+     *
+     * @param sex value to be assigned to property sex
+     * @since gempile-model 0.1.0
+     */
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    /**
+     * Return the PhoneNumber
+     *
+     * @return property value of phoneNumber
+     * @since gempile-model 0.1.0
+     */
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    /**
+     * Set the PhoneNumber
+     *
+     * @param phoneNumber value to be assigned to property phoneNumber
+     * @since gempile-model 0.1.0
+     */
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    /**
+     * Return the Adress
+     *
+     * @return property value of address
+     * @since gempile-model 0.1.0
+     */
+    public String getAddress() {
+        return address;
+    }
+
+    /**
+     * Set the Adress
+     *
+     * @param address value to be assigned to property address
+     * @since gempile-model 0.1.0
+     */
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    /**
+     * Return the Permission
+     *
+     * @return property value of permission
+     * @since gempile-model 0.1.0
+     */
+    public String getPermission() {
+        return permission;
+    }
+
+    /**
+     * Set the Permission
+     *
+     * @param permission value to be assigned to property permission
+     * @since gempile-model 0.1.0
+     */
+    public void setPermission(String permission) {
+        this.permission = permission;
+    }
+
+    /**
+     * Return the RegisterTime
+     *
+     * @return property value of registerTime
+     * @since gempile-model 0.1.0
+     */
+    public String getRegisterTime() {
+        return registerTime;
+    }
+
+    /**
+     * Set the RegisterTime
+     *
+     * @param registerTime value to be assigned to property registerTime
+     * @since gempile-model 0.1.0
+     */
+    public void setRegisterTime(String registerTime) {
+        this.registerTime = registerTime;
+    }
+
     @Override
     public String toString() {
         return "User{" +
-                "name='" + name + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 ", password='" + password + '\'' +
+                ", sex='" + sex + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", address='" + address + '\'' +
+                ", permission='" + permission + '\'' +
+                ", registerTime='" + registerTime + '\'' +
                 '}';
     }
 }

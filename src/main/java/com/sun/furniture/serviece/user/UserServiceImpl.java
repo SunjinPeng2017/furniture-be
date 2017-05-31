@@ -26,6 +26,26 @@ public class UserServiceImpl implements IUserService {
 
 
     /**
+     * 添加用户
+     *
+     * @param user 用户信息
+     */
+    @Override
+    public void insertUser(User user) {
+        mapper.insertUser(user);
+    }
+
+    /**
+     * 删除一个用户
+     *
+     * @param name 用户名
+     */
+    @Override
+    public void deleteUser(String name) {
+        mapper.deleteUser(name);
+    }
+
+    /**
      * @return  返回所有的用户
      */
     @Override
@@ -42,5 +62,15 @@ public class UserServiceImpl implements IUserService {
     public User getUserByNameAndPwd(String name, String password) {
         User user = mapper.getUserByNameAndPwd(name,password);
         return user;
+    }
+
+    /**
+     * 更新用户
+     *
+     * @param user 用户信息
+     */
+    @Override
+    public void updateUser(User user) {
+        mapper.updateUser(user);
     }
 }

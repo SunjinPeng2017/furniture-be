@@ -7,7 +7,32 @@
         <id property="id" column="id"/>
         <result property="name" column="name"/>
         <result property="password" column="password"/>
+        <result property="sex" column="sex"/>
+        <result property="phoneNumber" column="phone_number"/>
+        <result property="address" column="address"/>
+        <result property="permission" column="permission"/>
+        <result property="registerTime" column="register_time"/>
     </resultMap>
+
+    <insert id="insertUser" parameterType="com.sun.furniture.model.User">
+        INSERT INTO user
+        <set>
+            name = #{name},
+            password = #{password},
+            sex = #{sex},
+            phone_number = #{phoneNumber},
+            address = #{address},
+            permission = #{permission},
+            register_time = #{registerTime}
+        </set>
+    </insert>
+
+    <delete id="deleteUser">
+        DELETE FROM user
+        <where>
+            name = #{param1}
+        </where>
+    </delete>
 
     <select id="getUsers" resultMap="user">
         SELECT * FROM user;
@@ -22,4 +47,19 @@
             </if>
         </where>
     </select>
+
+    <update id="updateUser" parameterType="com.sun.furniture.model.User">
+        UPDATE user
+        <set>
+            name = #{name},
+            password = #{password},
+            sex = #{sex},
+            phone_number = #{phoneNumber},
+            address = #{address},
+            permission = #{permission}
+        </set>
+        <where>
+            id = #{id}
+        </where>
+    </update>
 </mapper>

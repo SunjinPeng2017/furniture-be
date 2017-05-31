@@ -18,6 +18,20 @@ import java.util.List;
 public interface IUserService {
 
     /**
+     * 添加用户
+     *
+     * @param user 用户信息
+     */
+    void insertUser(User user);
+
+    /**
+     * 删除一个用户
+     *
+     * @param name 用户名
+     */
+    void deleteUser(String name);
+
+    /**
      * @return  返回所有的用户
      */
     List<User> getUsers();
@@ -28,4 +42,11 @@ public interface IUserService {
      * @return  查询到的用户
      */
     User getUserByNameAndPwd(String name ,String password);
+
+    /**
+     * 更新用户
+     *
+     * @param user 用户信息
+     */
+    void updateUser(User user);
 }
