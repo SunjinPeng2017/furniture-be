@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mapper.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.sun.furniture.mapper.ICustomerMapper">
+    <resultMap id="customer_info" type="com.sun.furniture.model.CustomerInfo">
+        <id property="id" column="id"/>
+        <result property="customerName" column="customer_name"></result>
+        <result property="address" column="address"></result>
+        <result property="phoneNumber" column="phone_number"></result>
+        <result property="financialNumber" column="financial_number"></result>
+        <result property="beginDate" column="begin_date"></result>
+        <result property="endDate" column="end_date"></result>
+    </resultMap>
+
+    <select id="getCustomerInfo" resultMap="customer_info">
+        SELECT * from customer_info;
+    </select>
+</mapper>

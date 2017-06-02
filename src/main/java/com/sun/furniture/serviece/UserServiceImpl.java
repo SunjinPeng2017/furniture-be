@@ -1,4 +1,4 @@
-package com.sun.furniture.serviece.user;
+package com.sun.furniture.serviece;
 
 import com.sun.furniture.mapper.IUserMapper;
 import com.sun.furniture.model.User;

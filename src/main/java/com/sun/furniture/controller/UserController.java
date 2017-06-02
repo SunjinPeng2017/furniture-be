@@ -1,7 +1,7 @@
 package com.sun.furniture.controller;
 
 import com.sun.furniture.model.User;
-import com.sun.furniture.serviece.user.IUserService;
+import com.sun.furniture.serviece.IUserService;
 import io.swagger.annotations.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
