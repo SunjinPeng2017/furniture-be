@@ -3,6 +3,8 @@ package com.sun.furniture.model;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
+import java.io.Serializable;
+
 /**
  * <b><code>CustomerInfo</code></b>
  * <p>
@@ -15,7 +17,7 @@ import io.swagger.annotations.ApiModelProperty;
  * @since furniture-be 0.1.0
  */
 @ApiModel(value = "客户信息")
-public class CustomerInfo {
+public class CustomerInfo implements Serializable {
 
     @ApiModelProperty(value = "客户编码")
     private Integer id;
