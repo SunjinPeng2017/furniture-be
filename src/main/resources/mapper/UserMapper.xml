@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mapper.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.sun.furniture.mapper.IUserMapper">
+    <resultMap type="com.sun.furniture.model.User" id="user">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="password" column="password"/>
+        <result property="sex" column="sex"/>
+        <result property="phoneNumber" column="phone_number"/>
+        <result property="address" column="address"/>
+        <result property="permission" column="permission"/>
+        <result property="registerTime" column="register_time"/>
+    </resultMap>
+
+    <insert id="insertUser" parameterType="com.sun.furniture.model.User">
+        INSERT INTO user
+        <set>
+            name = #{name},
+            password = #{password},
+            sex = #{sex},
+            phone_number = #{phoneNumber},
+            address = #{address},
+            permission = #{permission},
+            register_time = #{registerTime}
+        </set>
+    </insert>
+
+    <delete id="deleteUser">
+        DELETE FROM user
+        <where>
+            name = #{param1}
+        </where>
+    </delete>
+
+    <select id="getUsers" resultMap="user">
+        SELECT * FROM user;
+    </select>
+
+    <select id="getUserByNameAndPwd" resultMap="user">
+        SELECT * from user
+        <where>
+            name = #{param1}
+            <if test="param2!=null and param2!=''">
+                and password = #{param2}
+            </if>
+        </where>
+    </select>
+
+    <update id="updateUser" parameterType="com.sun.furniture.model.User">
+        UPDATE user
+        <set>
+            name = #{name},
+            password = #{password},
+            sex = #{sex},
+            phone_number = #{phoneNumber},
+            address = #{address},
+            permission = #{permission}
+        </set>
+        <where>
+            id = #{id}
+        </where>
+    </update>
+</mapper>

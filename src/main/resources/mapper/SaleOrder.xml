@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mapper.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.sun.furniture.mapper.ISaleOrderMapper">
+    <resultMap id="sale_order" type="com.sun.furniture.model.SaleOrder">
+        <id property="id" column="id"></id>
+        <result property="saleNumber" column="sale_number"></result>
+        <result property="saleDate" column="sale_date"></result>
+        <result property="orderState" column="order_state"></result>
+        <result property="customerName" column="customer_name"></result>
+        <result property="address" column="address"></result>
+        <result property="totalMoney" column="total_money"></result>
+        <result property="remark" column="remark"></result>
+    </resultMap>
+
+    <select id="getSaleOrders" resultMap="sale_order">
+        select * from sale_order;
+    </select>
+
+    <insert id="addSaleOrder" parameterType="com.sun.furniture.model.SaleOrder">
+        INSERT into sale_order
+        <set>
+            sale_number = #{saleNumber},
+            sale_date = #{saleDate},
+            order_state = #{orderState},
+            customer_name = #{customerName},
+            address = #{address},
+            total_money = #{totalMoney},
+            remark = #{remark}
+        </set>
+    </insert>
+
+    <select id="getSaleOrderByNumber" resultMap="sale_order">
+        SELECT * from sale_order
+        <where>
+            sale_number = #{param1}
+        </where>
+    </select>
+
+    <delete id="deleteSaleOrder">
+        DELETE FROM sale_order
+        <where>
+            id = #{param1}
+        </where>
+    </delete>
+
+    <update id="updateSaleOrder" parameterType="com.sun.furniture.model.SaleOrder">
+        UPDATE sale_order
+        <set>
+            sale_number = #{saleNumber},
+            sale_date = #{saleDate},
+            order_state = #{orderState},
+            customer_name = #{customerName},
+            address = #{address},
+            total_money = #{totalMoney},
+            remark = #{remark}
+        </set>
+        <where>
+            id = #{id}
+        </where>
+    </update>
+</mapper>
